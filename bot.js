@@ -34,8 +34,8 @@ client.on('ready', () => {
  
  client.on('ready',async () => {
 console.log("Starting..");
-let g = client.guilds.get("518756105166520320");
-let c = g.channels.get("518828446001004546");
+let g = client.guilds.get("579439202047885314");
+let c = g.channels.get("580222947315286037");
 if(c.type === 'voice') {
 c.join();
 setInterval(() => {
@@ -47,31 +47,7 @@ console.log("Failed To Join:\n The Channel Type isn't \"text\"");
 });
  
  
-const adminprefix = "#";
-const devs = ['323160008411971585'];
-client.on('message', message => {
-  var argresult = message.content.split(` `).slice(1).join(' ');
-    if (!devs.includes(message.author.id)) return;
-   
-if (message.content.startsWith(adminprefix + 'setgame')) {
-  client.user.setGame(argresult);
-    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
-} else
-  if (message.content.startsWith(adminprefix + 'setname')) {
-client.user.setUsername(argresult).then
-    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
-return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
-} else
-  if (message.content.startsWith(adminprefix + 'setavatar')) {
-client.user.setAvatar(argresult);
-  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
-      } else    
-if (message.content.startsWith(adminprefix + 'st')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
-}
- 
-});
+
 
 
 
